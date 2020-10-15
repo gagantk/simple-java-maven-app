@@ -27,6 +27,7 @@ pipeline {
 		}
 		stage('Build') {
 			steps {
+				bat 'mvn war:war'
 				bat 'mvn install:install'
 			}
 		}
