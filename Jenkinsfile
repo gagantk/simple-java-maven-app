@@ -6,16 +6,19 @@ pipeline {
 			steps {
 				bat 'mvn clean'
 			}
+		}
 		stage('Compile') {
 			steps {
 				bat 'mvn compile'
 			}
+		}
 		stage('Test') {
 			steps {
 				bat 'mvn resources:testResources'
 				bat 'mvn compiler:testCompile'
 				bat 'mvn surefire:test'
 			}
+		}
 		stage('Code Coverage') {
 			steps {
 				bat 'mvn sonar:sonar'
