@@ -1,6 +1,5 @@
 pipeline {
 	agent any
-	// comment
 	stages {
 		stage('Clean') {
 			steps {
