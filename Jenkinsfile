@@ -11,7 +11,7 @@ node {
     stage('Test') {
         sh 'mvn resources:testResources'
         sh 'mvn compiler:testCompile'
-        sh 'mvn surefire:test jacoco:report'
+        sh 'mvn surefire:test jacoco:prepare-agent jacoco:report'
     }
     stage('Code Coverage') {
         sh 'mvn sonar:sonar -Dsonar.host.url=http://65.0.132.251:9000'
