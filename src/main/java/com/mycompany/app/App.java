@@ -14,9 +14,9 @@ public class App
         System.out.println(new App().getMessage());
     }
     
-    public void dummyFunc() {
-    	System.out.println("Nothing");
-    }
+    // public void dummyFunc() {
+    // 	System.out.println("Nothing");
+    // }
 
     private final String getMessage() {
         return message;
