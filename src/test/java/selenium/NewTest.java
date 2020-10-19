@@ -28,8 +28,7 @@ public class NewTest {
 		Assert.assertTrue(title.contains("Google")); 		
 	}	
 	@BeforeTest
-	public void beforeTest() {	
-	    System.setProperty("webdriver.chrome.driver", "/home/ec2-user/chrome-driver/chromedriver");
+	public void beforeTest() {
 	    driver = new ChromeDriver();  
 	}		
 	@AfterTest
