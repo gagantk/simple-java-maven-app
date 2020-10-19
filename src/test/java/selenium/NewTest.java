@@ -5,6 +5,7 @@ import java.io.File;
 import org.openqa.selenium.By;		
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -29,7 +30,9 @@ public class NewTest {
 	}	
 	@BeforeTest
 	public void beforeTest() {
-	    driver = new ChromeDriver();  
+	    ChromeOptions options = new ChromeOptions();
+	    options.addArguments("--headless");
+	    driver = new ChromeDriver(options);  
 	}		
 	@AfterTest
 	public void afterTest() {
