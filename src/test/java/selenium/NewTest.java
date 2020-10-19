@@ -29,6 +29,7 @@ public class NewTest {
 	}	
 	@BeforeTest
 	public void beforeTest() {	
+	    System.setProperty("webdriver.chrome.driver", "/home/ec2-user/chrome-driver/chromedriver");
 	    driver = new ChromeDriver();  
 	}		
 	@AfterTest
