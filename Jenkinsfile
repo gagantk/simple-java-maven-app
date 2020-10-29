@@ -1,3 +1,4 @@
+def image = ''
 node {
     stage('Checkout SCM') {
         checkout scm
@@ -19,5 +20,13 @@ node {
     }
     stage('Build') {
         sh 'mvn jar:jar install:install'
+    }
+    stage('Build Image') {
+        image = docker.build("gagantk/java-app")
+    }
+    stage('Push Image') {
+        docker.withRegistry('', 'dockerhub') {
+            image.push()
+        }
     }
 }
